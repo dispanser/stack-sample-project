@@ -1,0 +1,7 @@
+resolver: lts-11.10
+packages:
+  - '.'
+extra-deps: []
+nix:
+  enable:
+    true

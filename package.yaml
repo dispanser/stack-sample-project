@@ -1,0 +1,21 @@
+name: stack-project-template
+version: '0.0.0'
+category: template
+synopsis: sample stack project that works as a fully annotated project template
+description: >
+    This project aims to provide a stack project that works as a template for
+    many common use cases, including sample code for basic things.
+author: Thomas Peiselt
+github: dispanser/stack-project-template
+license: MIT
+
+ghc-options: -Wall
+dependencies:
+  - base >= 4.8.0 && <5
+
+library:
+  source-dirs: src
+  dependencies:
+    containers
+
+

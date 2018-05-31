@@ -1,0 +1,33 @@
+* Stack Project Template and Cheat Sheet
+
+This project aims to provide a stack project that works as a template for many
+common use cases, including sample code for basic things. It's inspired by
+[[https://pbrisbin.com/posts/haskell_project_checklist/][Pbrisbins haskell project checklist]].
+
+
+** Project Goals
+
+Create an annotated stack project with the following properties:
+- [ ] multi-module build
+- [ ] code generation: proto-lens
+  - [ ] use the generated code in the same module
+  - [ ] use the generated code in another module
+- [ ] tests
+- [ ] benchmarks
+- [ ] nix support (not a nix-based build, just stack nix support)
+- [ ] dependency outside of stackage
+
+Use the following frameworks / libraries:
+- [ ] tasty: test execution framework
+- [ ] hedgehog: property based testing (integrate via tasty-hedgehog)
+- [ ] criterion (or research)
+
+Provide sample code:
+- [ ] tests
+- [ ] property-based tests
+- [ ] benchmarks
+
+acceptance criteria:
+- [ ] documentation of the structure, describing each non-obvious entry
+
+** stack.yaml
