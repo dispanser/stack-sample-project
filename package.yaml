@@ -16,6 +16,13 @@ dependencies:
 library:
   source-dirs: src
   dependencies:
-    containers
+    - containers
 
-
+tests:
+  spec:
+    source-dirs: tests
+    main: Tests.hs
+    dependencies:
+      - tasty
+      - tasty-hunit
+      - stack-project-template
