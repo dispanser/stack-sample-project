@@ -20,9 +20,16 @@ library:
 
 tests:
   spec:
+    source-dirs: spec
+    main: Spec.hs
+    dependencies:
+      - stack-sample-project
+      - hspec
+  test:
     source-dirs: tests
     main: Tests.hs
     dependencies:
+      - stack-sample-project
       - tasty
       - tasty-hunit
-      - stack-sample-project
+

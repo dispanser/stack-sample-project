@@ -13,7 +13,7 @@ Create an annotated stack project with the following properties:
   - [ ] use the generated code in another module
 - [X] tests
 - [ ] benchmarks
-- [ ] nix support (not a nix-based build, just stack nix support)
+- [X] nix support (not a nix-based build, just stack nix support)
 - [ ] dependency outside of stackage
 
 Use the following frameworks / libraries:
@@ -22,8 +22,11 @@ Use the following frameworks / libraries:
 - [ ] criterion (or research)
 
 Provide sample code:
-- [ ] tests
-- [ ] property-based tests
+- [-] tests
+  - [X] tasty-hunit
+  - [X] hspec
+  - [ ] quickcheck
+  - [ ] hedgehog
 - [ ] benchmarks
 
 acceptance criteria:
