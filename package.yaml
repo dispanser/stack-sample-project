@@ -1,4 +1,4 @@
-name: stack-project-template
+name: stack-sample-project
 version: '0.0.0'
 category: template
 synopsis: sample stack project that works as a fully annotated project template
@@ -6,7 +6,7 @@ description: >
     This project aims to provide a stack project that works as a template for
     many common use cases, including sample code for basic things.
 author: Thomas Peiselt
-github: dispanser/stack-project-template
+github: dispanser/stack-sample-project
 license: MIT
 
 ghc-options: -Wall
@@ -25,4 +25,4 @@ tests:
     dependencies:
       - tasty
       - tasty-hunit
-      - stack-project-template
+      - stack-sample-project
