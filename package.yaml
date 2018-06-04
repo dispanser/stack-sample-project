@@ -35,3 +35,12 @@ tests:
       - tasty-hunit
       - tasty-hspec
 
+benchmarks:
+  sample-benchmark-criterion:
+    main: Bench.hs
+    source-dirs: bench
+    ghc-options:
+      - -threaded
+    dependencies:
+      - stack-sample-project
+      - criterion

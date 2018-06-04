@@ -56,7 +56,7 @@ Create an annotated stack project with the following properties:
 Use the following frameworks / libraries:
 - [X] tasty: test execution framework
 - [ ] hedgehog: property based testing (integrate via tasty-hedgehog)
-- [ ] criterion (or research)
+- [X] criterion
 
 Provide sample code:
 - [-] tests
@@ -64,7 +64,7 @@ Provide sample code:
   - [X] hspec
   - [ ] quickcheck
   - [ ] hedgehog
-- [ ] benchmarks
+- [X] benchmarks
 
 acceptance criteria:
 - [ ] documentation of the structure, describing each non-obvious entry
