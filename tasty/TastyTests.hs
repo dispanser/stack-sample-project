@@ -6,8 +6,8 @@ import TastyHspec (rootSpec)
 
 main :: IO ()
 main = do
-  rootSpec <- testSpec "hspec tests" rootSpec
-  let tests = testGroup "all tests" [ hunitTests, rootSpec ]
+  s <- testSpec "hspec tests" rootSpec
+  let tests = testGroup "all tests" [ hunitTests, s ]
   defaultMain tests
 
 hunitTests :: TestTree

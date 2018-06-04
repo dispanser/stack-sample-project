@@ -4,6 +4,43 @@ This project aims to provide a stack project that works as a template for many
 common use cases, including sample code for basic things. It's inspired by
 [[https://pbrisbin.com/posts/haskell_project_checklist/][Pbrisbins haskell project checklist]].
 
+** Structure
+*** stack.yaml
+
+ The basic configuration file for the entire project is [[./stack.yaml]], defining the basic resolver
+ and structure.
+
+ - extra-deps will (later) be used to specify versions that don't exist or
+   are not compatible with stackage
+ - the nix section should contain all the packages that are required for linking
+ - packages defines the locations of what would be modules in a maven or
+   gradle world.
+
+ #+BEGIN_SRC
+ resolver: lts-11.10
+ packages:
+   - '.'
+ extra-deps: []
+ nix:
+   enable:
+     true
+   packages: [ zlib ]
+ #+END_SRC
+
+*** package.yaml
+
+ We a include [[./package.yaml]] file that defines the structure of the
+ individual structure of the module:
+ - library, executables, tests
+ - dependencies: globally and per entry
+   - only your tests depend on the test framework
+   - only your executable depends on the option parser library
+   - ...
+
+** Stack Cheat Sheet
+*** Tests
+- ghci session w/ loaded tests (tasty) module: ~stack ghci :tasty~
+
 ** Project Goals
 
 Create an annotated stack project with the following properties:
@@ -31,35 +68,3 @@ Provide sample code:
 
 acceptance criteria:
 - [ ] documentation of the structure, describing each non-obvious entry
-
-** stack.yaml
-
-The basic configuration file for the entire project is [[./stack.yaml]], defining the basic resolver
-and structure.
-
-- extra-deps will (later) be used to specify versions that don't exist or
-  are not compatible with stackage
-- the nix section should contain all the packages that are required for linking
-- packages defines the locations of what would be modules in a maven or
-  gradle world.
-
-#+BEGIN_SRC
-resolver: lts-11.10
-packages:
-  - '.'
-extra-deps: []
-nix:
-  enable:
-    true
-  packages: [ zlib ]
-#+END_SRC
-
-** package.yaml
-
-We a include [[./package.yaml]] file that defines the structure of the
-individual structure of the module:
-- library, executables, tests
-- dependencies: globally and per entry
-  - only your tests depend on the test framework
-  - only your executable depends on the option parser library
-  - ...
