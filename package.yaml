@@ -26,8 +26,8 @@ tests:
       - stack-sample-project
       - hspec
   test:
-    source-dirs: tests
-    main: Tests.hs
+    source-dirs: tasty
+    main: TastyTests.hs
     dependencies:
       - stack-sample-project
       - tasty
