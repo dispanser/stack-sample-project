@@ -30,6 +30,8 @@ tests:
     main: TastyTests.hs
     dependencies:
       - stack-sample-project
+      - hspec
       - tasty
       - tasty-hunit
+      - tasty-hspec
 

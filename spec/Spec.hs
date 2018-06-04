@@ -9,6 +9,6 @@ spec :: Spec
 spec = do
   describe "basic spec description" $ do
     context "some more detailed context" $ do
-      it "concrete test description" $ function1 [1, 2, 3] `shouldBe` [3, 2, 1]
+      it "concrete test description" $ function1 [1 :: Int, 2, 3] `shouldBe` [3, 2, 1]
 
 
