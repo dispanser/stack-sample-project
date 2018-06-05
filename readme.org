@@ -4,6 +4,8 @@ This project aims to provide a stack project that works as a template for many
 common use cases, including sample code for basic things. It's inspired by
 [[https://pbrisbin.com/posts/haskell_project_checklist/][Pbrisbins haskell project checklist]].
 
+Current Status: WIP.
+
 ** Structure
 *** stack.yaml
 
@@ -40,6 +42,37 @@ common use cases, including sample code for basic things. It's inspired by
 ** Stack Cheat Sheet
 *** Tests
 - ghci session w/ loaded tests (tasty) module: ~stack ghci :tasty~
+** Debugging
+Using the [[https://github.com/ndmitchell/debug][debug]] package, it's possible to annotate functions and analyse their
+behavior.
+
+Enable the following extensions, import ~Debug~ module and annotate your function:
+#+BEGIN_SRC
+{-# LANGUAGE TemplateHaskell, ViewPatterns, PartialTypeSignatures #-}
+
+module ...
+
+import Debug
+
+debug [d|
+  fun1debug :: [a] -> [a]
+  fun1debug []     = []
+  fun1debug (x:xs) = fun1debug xs ++ [x]
+  |]
+#+END_SRC
+
+Trigger function execution (e.g. via ghci), and afterwards run ~debugView~:
+
+#+BEGIN_SRC
+> fun1debug "some string to reverse"
+"esrever ot gnirts emos"
+> debugView
+/run/user/1000/debug6626-0.html: xdg-open: command not found
+Failed to start a web browser, open: /run/user/1000/debug6626-0.html
+In future you may wish to use 'debugSaveTrace.
+#+END_SRC
+
+Open the html page in your editor of choice.
 
 ** Project Goals
 
